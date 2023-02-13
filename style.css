@@ -1,0 +1,50 @@
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carouselExampleCaptions{
+    margin-bottom: 2rem;
+}
+
+fieldset .categoria {
+	padding:16px;
+   	border-radius:10px;
+	background-color:#b3b2b2;
+    background-color: aqua;
+}
+
+
+.form-check-label{
+	background-color: #b3b2b2;
+	font-weight:bold;
+	display:inline-block;
+}
+
+.form-check-input {
+    padding: 2rem;
+}
+
+.card-group{
+    display: flex;
+}
+
+.card {
+    padding: 15px;
+    margin: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 1px 10px rgb(0.0.0.0.2);
+    transition: 4ms;
+}
+
+
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
+}
+
+.card-text {
+    text-align:justify;
+}
+
