@@ -4,24 +4,32 @@
     box-sizing: border-box;
 }
 
+.nav-item{
+    display: inline-block;
+    width: 6rem;
+}
 
-/* fieldset .categoria {
-	padding:16px;
-   	border-radius:10px;
-	background-color:#b3b2b2;
-    background-color: aqua;
-} */
+#item-nav {
+    height: 4rem;
+    
+}
 
-/* 
-.form-check-label{
-	background-color: #b3b2b2;
-	font-weight:bold;
-	display:inline-block;
-} */
+.nav-link{
+    justify-content: center;
+    text-align: center;
+}
 
-/* .form-check-input {
-    padding: 2rem;
-} */
+
+.form-check-input {
+    border: solid rgb(29, 28, 28) .10rem;
+}
+
+.card-title {
+    display: flex;
+    justify-content: center;
+
+}
+
 
 .card.h-100 {
     padding: 3px;
@@ -37,6 +45,19 @@
 
 .card-text {
     text-align:justify;
+}
+
+.form-control {
+    border: solid .15rem black;
+}
+
+footer{
+    padding-top: 3rem;
+}
+
+.img, svg{
+    margin-left: 2rem;
+    
 }
 
 
