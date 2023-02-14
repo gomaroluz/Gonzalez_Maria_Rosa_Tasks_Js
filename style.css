@@ -4,37 +4,28 @@
     box-sizing: border-box;
 }
 
-.carouselExampleCaptions{
-    margin-bottom: 2rem;
-}
 
-fieldset .categoria {
+/* fieldset .categoria {
 	padding:16px;
    	border-radius:10px;
 	background-color:#b3b2b2;
     background-color: aqua;
-}
+} */
 
-
+/* 
 .form-check-label{
 	background-color: #b3b2b2;
 	font-weight:bold;
 	display:inline-block;
-}
+} */
 
-.form-check-input {
+/* .form-check-input {
     padding: 2rem;
-}
+} */
 
-.card-group{
-    display: flex;
-}
-
-.card {
-    padding: 15px;
-    margin: 30px;
-    border-radius: 10px;
-    box-shadow: 2px 1px 10px rgb(0.0.0.0.2);
+.card.h-100 {
+    padding: 3px;
+    box-shadow: 4px 1px 10px rgb(0.0.0.0.2);
     transition: 4ms;
 }
 
@@ -47,4 +38,6 @@ fieldset .categoria {
 .card-text {
     text-align:justify;
 }
+
+
 
