@@ -15,6 +15,12 @@ body {
 
 }
 
+.navbar-brand img  {
+    padding-left: 1rem;
+
+}
+
+
 .nav-item {
     display: inline-block;
     width: 6rem;
@@ -57,6 +63,10 @@ body {
 .card:hover {
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
     transform: translateY(-3%);
+}
+
+#cards_events {
+    justify-content: center;
 }
 
 .card-text {
