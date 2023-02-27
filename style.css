@@ -5,37 +5,39 @@
 }
 
 body {
-    background: #FFE000;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #799F0C, #FFE000);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #799F0C, #FFE000);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: #fffc00;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ffffff, #fffc00);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ffffff, #fffc00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
-.navbar-brand img  {
+.navbar-brand img {
     padding-left: 1rem;
 
 }
 
-nav a{
+nav a {
     text-decoration: none;
-    
+
 }
 
 
 .nav-item {
     display: inline-block;
     width: 7rem;
-    
+
 }
 
 
 #item-nav {
     height: 4rem;
+    color: white;
+    align-items: center;
 
+}
+
+.nav-pills .nav-link.active {
+    background-color: #ffd500;
 }
 
 .nav-link {
@@ -43,9 +45,15 @@ nav a{
     text-align: center;
     align-items: center;
     padding: 1rem;
+    color: #ffd500;
     text-decoration: none;
+    font-weight: bold;
 }
 
+
+#white {
+    color: white;
+}
 
 .form-check-input {
     border: solid rgb(29, 28, 28) .10rem;
@@ -107,6 +115,7 @@ svg {
     margin-left: 2rem;
 
 }
+
 
 .table {
     background-color: rgb(248, 250, 250);
