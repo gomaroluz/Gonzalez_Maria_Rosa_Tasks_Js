@@ -5,38 +5,61 @@
 }
 
 body {
-    background: #FFE000;
+    background: #fffc00;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #799F0C, #FFE000);
+    background: -webkit-linear-gradient(to bottom, #ffffff, #fffc00);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #799F0C, #FFE000);
+    background: linear-gradient(to bottom, #ffffff, #fffc00);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 
 
 }
 
-.navbar-brand img  {
+.navbar-brand img {
     padding-left: 1rem;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
 
 }
 
 
 .nav-item {
     display: inline-block;
-    width: 6rem;
+    width: 7rem;
+
 }
 
 
 #item-nav {
     height: 4rem;
+    color: black;
+    align-items: center;
 
 }
+
+.nav-pills .nav-link.active {
+    background-color: #ffd500;
+}
+
 
 .nav-link {
     justify-content: center;
     text-align: center;
+    align-items: center;
+    padding: 1rem;
+    text-decoration: none;
+    color: coral;
+    font-weight: bold;
 }
 
+#white {
+    color: white;
+}
 
 .form-check-input {
     border: solid rgb(29, 28, 28) .10rem;
@@ -76,12 +99,12 @@ body {
 .card-footer a {
     display: inline-block;
     width: 5rem;
-    height: 1.6rem;
+    height: 2rem;
     text-decoration: none;
     font-size: 12px;
-    box-shadow: 4px 1px 10px rgb(0.0.0.0.2);
     font-weight: bold;
-    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
 
 }
 
