@@ -79,13 +79,13 @@ nav a {
 .card.h-100 {
     padding: 3px;
     box-shadow: 4px 1px 10px rgb(0.0.0.0.2);
-    transition: 4ms;
+    transition: 10ms;
 }
 
 
 .card:hover {
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
-    transform: translateY(-3%);
+    transform: translateX(-3% );
 }
 
 #cards_events {
@@ -96,15 +96,31 @@ nav a {
     text-align: justify;
 }
 
-.card-footer a {
+#button {
     display: inline-block;
     width: 5rem;
     height: 2rem;
     text-decoration: none;
     font-size: 12px;
     font-weight: bold;
-    padding-top: 0.5rem;
-    padding-left: 0.5rem;
+    border-radius: 15%;
+    padding-left: 0.25rem;
+    color: white;
+    background-color: green;
+
+}
+
+#button1 {
+    display: inline-block;
+    width: 5rem;
+    height: 2rem;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 15%;
+    padding-left: 1rem;
+    color: black;
+    background-color: yellow;
 
 }
 
@@ -139,6 +155,10 @@ svg {
 #details {
     text-align: center;
     font-size: 16px;
+}
 
-
+#container-detail{
+    padding-top: 3rem;
+    max-width: 540px;
+    margin: 0 auto;
 }

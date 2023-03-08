@@ -1,6 +1,6 @@
-// current_date = data.currentDate;
-// events = data.events
-// let past_events = []
+current_date = data.currentDate;
+events = data.events
+let past_events = []
 
 
 // for (var evento in events) {
@@ -55,3 +55,7 @@ past_events.sort((date1, date2) => {
 });
 
 document.getElementById('cards_events').innerHTML = crearTarjetas(past_events)
+
+
+let card = document.getElementById('cards_events');
+

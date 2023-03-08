@@ -29,8 +29,39 @@ console.log(future_events)
 let past_events = eventsSort.filter(event => event.date < current_date)
 console.log (past_events)
 
+let categoryMuseum = events.filter(event => events.category === "Museum");
+
+let categoryfoodFair = events.filter(function(el){
+    return(el.category === "Food Fair");
+})
+
+let categoryrace = events.filter(function(el){
+    return(el.category === "Race");
+})
+
+
+let categorycostumeParty = events.filter(function(el){
+    return (el.category === "Costume Party");
+})
+
+let categorymusicConcert = events.filter(function(el){
+    return(el.category === "Music Concert");
+})
+
+
+let categorybookExchange = events.filter(function (el){
+    return (el.category === "Book Exchange");
+})
+
+
+let categorycinema = events.filter(function(el){
+    return(el.category === "Cinema");
+})
+
+
 
 let card = document.getElementById('cards_events');
+
 
 eventsSort.map((x) => {
     card.innerHTML += `   
@@ -49,8 +80,8 @@ eventsSort.map((x) => {
                             
 
                         </div>
-                        <div class="card-footer" >
-                            <a href="#" class="badge bg-success"><b> Price: $${x.price}</b></a>
+                        <div class="card-footer">
+                            <input type="button" id="button" value="$${x.price}">
                             <a href="#" class="badge bg-warning text-dark">See more</a>
                         </div>
                     </div>
@@ -72,7 +103,7 @@ eventsSort.map((x) => {
 
 // document.getElementById('cards_events').innerHTML = crearTarjetas(events)
 
-
++
 // function crearTarjetas(arrayDatos) {
 //     let tarjetas = ``
 //     for (const event of arrayDatos) {
