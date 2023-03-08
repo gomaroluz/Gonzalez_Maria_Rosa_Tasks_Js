@@ -40,10 +40,10 @@ let eventsSort = events.sort((date1, date2) => {
     }
 });
 
-let future_events = eventsSort.filter(event => event.date > current_date)
+let future_events = events.filter(event => event.date > current_date)
 console.log(future_events)
 
-let past_events = eventsSort.filter(event => event.date < current_date)
+let past_events = events.filter(event => event.date < current_date)
 console.log (past_events)
 
 

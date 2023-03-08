@@ -5,14 +5,9 @@
 }
 
 body {
-    background: #fffc00;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #ffffff, #fffc00);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #ffffff, #fffc00);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
+    background: #f46b45;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -53,7 +48,7 @@ nav a {
     align-items: center;
     padding: 1rem;
     text-decoration: none;
-    color: coral;
+    color: #f46b45;
     font-weight: bold;
 }
 
@@ -67,6 +62,19 @@ nav a {
 
 .form-label {
     color: white;
+}
+
+.form-check-label {
+    font-weight: bold;
+}
+
+#boton_submit {
+    background-color:#3b9c6f;
+    margin-left: 1rem;
+    color: white;
+    font-weight: bold;
+    width: 5rem;
+
 }
 
 .card-title {
@@ -96,6 +104,11 @@ nav a {
     text-align: justify;
 }
 
+
+.card-footer{
+    margin: 0 auto;
+}
+
 #button {
     display: inline-block;
     width: 5rem;
@@ -103,10 +116,9 @@ nav a {
     text-decoration: none;
     font-size: 12px;
     font-weight: bold;
-    border-radius: 15%;
     padding-left: 0.25rem;
     color: white;
-    background-color: green;
+    background-color: #3b9c6f;
 
 }
 
@@ -114,13 +126,12 @@ nav a {
     display: inline-block;
     width: 5rem;
     height: 2rem;
+    text-align: center;
     text-decoration: none;
     font-size: 12px;
     font-weight: bold;
-    border-radius: 15%;
-    padding-left: 1rem;
     color: black;
-    background-color: yellow;
+    background-color: orange;
 
 }
 

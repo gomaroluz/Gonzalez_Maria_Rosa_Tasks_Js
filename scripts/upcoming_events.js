@@ -50,4 +50,4 @@ future_events.sort((date1, date2) => {
     }
 });
 
-document.getElementById('cards_events').innerHTML = crearTarjetas(future_events)
+render_cards(future_events)

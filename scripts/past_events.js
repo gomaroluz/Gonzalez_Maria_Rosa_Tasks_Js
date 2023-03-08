@@ -1,11 +1,11 @@
 current_date = data.currentDate;
 events = data.events
-let past_events = []
 
+console.log(past_events)
 
 // for (var evento in events) {
 //     if (events[evento].date < current_date) {
-        
+
 //         past_events.unshift(events[evento])
 //         console.log('el evento ya paso');
 //     }
@@ -30,7 +30,7 @@ let past_events = []
 //                             <p class="card-text"><b>Place: </b>${x.place}</p>
 //                             <p class="card-text"><b>Capacity: </b>${x.capacity}</p>
 //                             <p class="card-text"><b>Assistance: </b>${x.assistance}</p>
-                            
+
 
 //                         </div>
 //                         <div class="card-footer" >
@@ -40,22 +40,23 @@ let past_events = []
 //                     </div>
 //                 </div>
 //                     `;
-                    
+
 // });
 
+let card = document.getElementById('cards_events');
 
-past_events.sort((date1, date2) => { 
+past_events.sort((date1, date2) => {
     if (date1.date < date2.date) {
         return -1;
     } else if (date1.date > date2.date) {
         return 1;
-    }else {
+    } else {
         return 0;
     }
 });
 
-document.getElementById('cards_events').innerHTML = crearTarjetas(past_events)
+ render_cards(past_events)
 
 
-let card = document.getElementById('cards_events');
+
 
