@@ -44,6 +44,8 @@ console.log(past_events)
 // });
 
 let card = document.getElementById('cards_events');
+let searcher_past = document.getElementById('searcher_past')
+
 
 past_events.sort((date1, date2) => {
     if (date1.date < date2.date) {
@@ -55,8 +57,47 @@ past_events.sort((date1, date2) => {
     }
 });
 
- render_cards(past_events)
+function filter_name_description_upcomming(event){ 
+    if (
+            (
+                event.name.toLowerCase().includes(seaecher.value.toLowerCase()) || 
+                event.description.toLowerCase().includes(seaecher.value.toLowerCase())
+                ) && (
+                    event.date > current_date
+                    )) {
+        return true
+    }else{
+        return false
+    }
+}
 
+render_cards(past_events)
 
+function filter_name_description_past(event){ 
+    if (
+            (
+                event.name.toLowerCase().includes(searcher_past.value.toLowerCase()) || 
+                event.description.toLowerCase().includes(searcher_past.value.toLowerCase())
+                ) && (
+                    event.date < current_date
+                    )) {
+        return true
+    }else{
+        return false
+    }
+}
+    
 
+function name_description_filter_past(){
+    console.log(searcher_past.value)
+    events_filtered = events.filter(filter_name_description_past) 
 
+    console.log(events_filtered)
+    if (events_filtered.length > 0) {
+        render_cards(events_filtered)
+    }else{
+      alert('No events found. Try another filter')
+    }
+}
+
+searcher_past.addEventListener("keyup", name_description_filter_past)

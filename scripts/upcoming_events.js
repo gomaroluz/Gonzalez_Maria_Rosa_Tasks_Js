@@ -39,6 +39,8 @@
 
 // });
 
+let searcher_future = document.getElementById('searcher_upcoming')
+
 
 future_events.sort((date1, date2) => {
     if (date1.date < date2.date) {
@@ -51,3 +53,31 @@ future_events.sort((date1, date2) => {
 });
 
 render_cards(future_events)
+
+function filter_name_description_upcomming(event){ 
+    if (
+            (
+                event.name.toLowerCase().includes(searcher_future.value.toLowerCase()) || 
+                event.description.toLowerCase().includes(searcher_future.value.toLowerCase())
+                ) && (
+                    event.date > current_date
+                    )) {
+        return true
+    }else{
+        return false
+    }
+}
+
+function name_description_filter_upcoming(){
+    console.log(searcher_future.value)
+    events_filtered = events.filter(filter_name_description_upcomming) 
+
+    if (events_filtered.length > 0) {
+        render_cards(events_filtered)
+    }else{
+      alert('No events found. Try another filter')
+    }
+}
+
+searcher_future.addEventListener("keyup", name_description_filter_upcoming)
+

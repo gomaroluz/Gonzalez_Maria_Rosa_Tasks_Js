@@ -95,12 +95,16 @@ function filter_name_description(event){
     }
 }
 
-function category_filtered(){
+function name_description_filter(){
     console.log(searcher.value)
     events_filtered = events.filter(filter_name_description) 
 
     console.log(events_filtered)
-    render_cards(events_filtered)
+    if (events_filtered.length > 0) {
+        render_cards(events_filtered)
+    }else{
+      alert('No events found. Try another filter')
+    }
 }
 
-searcher.addEventListener("keyup", category_filtered)
+searcher.addEventListener("keyup", name_description_filter)

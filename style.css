@@ -38,7 +38,7 @@ nav a {
 }
 
 .nav-pills .nav-link.active {
-    background-color: #ffd500;
+    background-color: #f8b159;
 }
 
 
@@ -48,7 +48,7 @@ nav a {
     align-items: center;
     padding: 1rem;
     text-decoration: none;
-    color: #f46b45;
+    color: white;
     font-weight: bold;
 }
 
@@ -76,6 +76,9 @@ nav a {
     width: 5rem;
 
 }
+
+
+/* cards */
 
 .card-title {
     display: flex;
@@ -139,9 +142,23 @@ nav a {
     border: solid .15rem black;
 }
 
+
+/* footer */
+
 footer {
     padding-top: 3rem;
 }
+
+
+.footer-cohort {
+    color: white;
+
+}
+
+#Cohort{
+    color: white;
+}
+
 
 .img,
 svg {
