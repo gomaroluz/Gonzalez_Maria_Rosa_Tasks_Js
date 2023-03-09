@@ -108,3 +108,37 @@ function name_description_filter(){
 }
 
 searcher.addEventListener("keyup", name_description_filter)
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+let checkboxes = document.getElementById('container_checkboxes')
+
+
+let events_categories = get_categories(events);
+
+
+function get_categories(events){ 
+    categories = new Set()
+    events.forEach( (event) => {
+        categories.add(event.category)
+    })
+    return categories
+}
+
+function render_checkboxes(events_categories) {
+
+    checkboxes.innerHTML = ``
+    console.log(events_categories)
+    events_categories.forEach( (category) => {
+        checkboxes.innerHTML += `
+    <div class="form-check form-check-inline">
+        <label class="form-check-label" for="'${category}'">'${category}'</label>
+        <input class="form-check-input" type="checkbox"  value='${category}'>
+        
+    </div> `
+
+    });
+}
+
+render_checkboxes(events_categories)
