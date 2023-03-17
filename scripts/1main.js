@@ -47,8 +47,7 @@ let past_events = events.filter(event => event.date < current_date)
 console.log (past_events)
 
 
-let searcher = document.getElementById('searcher')
-console.log(searcher);
+
 
 function render_cards(events_array) {
 
@@ -87,6 +86,10 @@ function seeDetail(_id){
     window.location.href = `./details.html?id=${_id}`
 }
 
+
+// let searcher = document.getElementById('searcher')
+// console.log(searcher);
+
 function filter_name_description(event){ 
     if (event.name.toLowerCase().includes(searcher.value.toLowerCase()) || event.description.toLowerCase().includes(searcher.value.toLowerCase())) {
         return true
@@ -107,7 +110,7 @@ function name_description_filter(){
     }
 }
 
-searcher.addEventListener("keyup", name_description_filter)
+//searcher.addEventListener("keyup", name_description_filter)
 
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -133,12 +136,39 @@ function render_checkboxes(events_categories) {
     events_categories.forEach( (category) => {
         checkboxes.innerHTML += `
     <div class="form-check form-check-inline">
-        <label class="form-check-label" for="'${category}'">'${category}'</label>
-        <input class="form-check-input" type="checkbox"  value='${category}'>
+        <label class="form-check-label" for="'${category}'">'${category}'
+        <input onclick=get_filtered_events() class="c_inp" type="checkbox" name='checkbox_category' value='${category}'>
+        </label>
         
     </div> `
 
     });
 }
 
+
 render_checkboxes(events_categories)
+
+
+function get_filtered_events(){
+    
+    // get the text searcher value
+    let text_searcher = document.getElementById('searcher').value
+    console.log('text searcher:' + text_searcher)
+
+    // get all the checked checkboxes
+    let checkboxes_searcher = Array.from(document.querySelectorAll(`.c_inp`)).map(check => check)
+    checkboxes_searcher = checkboxes_searcher.filter( checkbox => {if (checkbox.checked){return true}})
+    checkboxes_searcher = checkboxes_searcher.map(checkbox => checkbox.value.toLowerCase())
+    console.log(checkboxes_searcher)
+
+    let ev_filtered = events.filter( each => {
+        return (
+            each.name.toLowerCase().includes(text_searcher.toLowerCase()) || 
+            each.description.toLowerCase().includes(text_searcher.toLowerCase())
+            ) &&
+            (checkboxes_searcher.length === 0 || checkboxes_searcher.includes(each.category.toLowerCase()))
+    })
+    console.log(ev_filtered)
+
+    ev_filtered.length>0 ? render_cards(ev_filtered) : alert('No event found with the specified properties')
+}
