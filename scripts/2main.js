@@ -1,15 +1,15 @@
-let upComingEvents = []
-let card_events = document.getElementById('cards_events')
+
+let eventos = []
+
 
 function traerDatos() {
     //  fetch ('./scripts/data.json')
     fetch('https://mindhub-xj03.onrender.com/api/amazing')
         .then(response => response.json())
-        .then(datosApi => {
-            console.log(datosApi)
-            upComingEvents = datosApi.events.filter(event => event.date > datosApi.currentDate)
-            console.log(upComingEvents)
-            render_cards(upComingEvents, card_events)
+        .then(events => {
+            eventos = events.events
+            console.log(eventos)
+            render_cards(eventos, cards_events)
         })
 
         .catch(error => console.log(error.mesagge))
@@ -18,10 +18,9 @@ function traerDatos() {
 traerDatos()
 
 
-
-function render_cards(upComingEvents, lugar) {
-    cards = ``
-    upComingEvents.forEach(evento => {
+function render_cards(eventos, lugar) {
+   let cards = ``
+    eventos.forEach(evento => {
         cards += `   
                     <div class="col">
                         <div class="card h-100">
@@ -51,34 +50,8 @@ function render_cards(upComingEvents, lugar) {
 }
 
 
+
+
 function seeDetail(_id) {
     window.location.href = `./details.html?id=${_id}`
 }
-
-// function filter_name_description_upcomming(event){ 
-//     if (
-//             (
-//                 event.name.toLowerCase().includes(searcher_future.value.toLowerCase()) || 
-//                 event.description.toLowerCase().includes(searcher_future.value.toLowerCase())
-//                 ) && (
-//                     event.date > current_date
-//                     )) {
-//         return true
-//     }else{
-//         return false
-//     }
-// }
-
-// function name_description_filter_upcoming(){
-//     console.log(searcher_future.value)
-//     events_filtered = events.filter(filter_name_description_upcomming) 
-
-//     if (events_filtered.length > 0) {
-//         render_cards(events_filtered)
-//     }else{
-//       alert('No events found. Try another filter')
-//     }
-// }
-
-// searcher_future.addEventListener("keyup", name_description_filter_upcoming)
-
