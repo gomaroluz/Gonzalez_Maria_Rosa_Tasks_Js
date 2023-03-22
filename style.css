@@ -171,6 +171,11 @@ svg {
     font-size: small;
 }
 
+.table .subtitles{
+    font-weight: bold;
+    text-align: center;
+}
+
 .caja {
 
     border-color: black solid 1rem;

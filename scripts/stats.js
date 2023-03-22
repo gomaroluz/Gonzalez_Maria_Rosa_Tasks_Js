@@ -1,4 +1,6 @@
 let eventos = []
+
+async function traerDatos(){
     //  fetch ('./scripts/data.json')
     fetch('https://mindhub-xj03.onrender.com/api/amazing')
         .then(response => response.json())
@@ -7,17 +9,27 @@ let eventos = []
             console.log(eventos)
             // let eventospasados = pasados(events.events, eventos.currentDate)
             // console.log(eventospasados)
-            let past = pastEvents(events.events, events.currentDate)
+            let past = pastEvents(eventos, events.currentDate)
             console.log(past)
-            let futures = upComingEvents(events.events, events.currentDate)
+            let futures = upComingEvents(eventos, events.currentDate)
             console.log(futures)
 
-            let percentageresult = assistance (eventos)
-            printTable(results(assistance(eventos), assistance(eventos).reverse(),), "generaltable")
+            let percentageresult = assistance(eventos)
+            console.log(percentageresult + 'is array ' + Array.isArray(percentageresult))
 
-            // printTable(dataTable(futures), "upcoming")
-            // printTable(dataTable(past), "past")
+            let maxCapacity = capacity(eventos)
+            console.log(maxCapacity + 'is array' + Array.isArray(maxCapacity))
+            results = results(percentageresult, percentageresult.reverse(), maxCapacity)
+            console.log(results)
+            printTable(results, "generaltable")
+
+            data = dataTable(futures)
+            printTableEvents(dataTable(futures), "upcoming")
+            printTableEvents(dataTable(futures), "past")
+            //printTable(dataTable(futures), "upcoming")
+            //printTable(dataTable(past), "past")
         })
+      }
 
 
         function upComingEvents(events, currentDate) {
@@ -36,8 +48,7 @@ function assistance(eventos) {
             nameEvent: event.name
         }
     })
-    percentagematrix.sort((a,b)=>b.attendance - a.attendance)
-    console.log(percentagematrix)
+    percentagematrix.sort((a, b) => b.attendance - a.attendance)
     return percentagematrix
 }
 
@@ -49,16 +60,14 @@ function capacity(arrPast) {
       }
     })
     arrayCapacity.sort((a, b) => b.capacity - a.capacity)
-    console.log(arrayCapacity)
     return arrayCapacity
-  
   }
 
 function results(highestPercentage, lowestPercentage, largerCapacity) {
     let all = {
       highestPercentage: highestPercentage[0].nameEvent,
       lowestPercentage: lowestPercentage[0].nameEvent,
-    //   largerCapacity: largerCapacity[0].nameEvent,
+      largerCapacity: largerCapacity[0].nameEvent,
     }
     
 
@@ -81,7 +90,6 @@ function results(highestPercentage, lowestPercentage, largerCapacity) {
     let eventCategories = categories.map(cat => arr.filter(event => event.category == cat))
     let result = eventCategories.map(eventCat => {
         let calculate = eventCat.reduce((acc, event) => {
-          console.log(event)
           acc.category = event.category;
           acc.revenues += event.price * (event.assistance || event.estimate);
           acc.attendance += ((event.assistance || event.estimate) * 100) / event.capacity
@@ -97,17 +105,19 @@ function results(highestPercentage, lowestPercentage, largerCapacity) {
       return result;
     }
     
-    function printTable(arr, idTag) {
+    function printTableEvents(arr, idTag) {
       const upcomingTable = document.getElementById(idTag)
+      console.log(arr)
       let html = arr.map(eventos => {
         return `
           <tr>
                   <td>${eventos.category}</td>
                   <td>$${eventos.revenues}</td>
                   <td>${eventos.attendance.toFixed(2)}%</td>
-              </tr>
+            </tr>
           `
       })
       upcomingTable.innerHTML = html.join("")
     }
   
+  traerDatos()
